@@ -1,0 +1,32 @@
+[package]
+name = "tictactoe"
+version = "0.1.0"
+description = "Tic-tac-toe on-chain game"
+edition = "2021"
+
+[lib]
+crate-type = ["lib", "cdylib"]
+name = "tictactoe"
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build"]
+anchor-debug = []
+custom-heap = []
+custom-panic = []
+
+[dependencies]
+anchor-lang = { workspace = true }
+
+[dev-dependencies]
+litesvm = { workspace = true }
+solana-sdk = { workspace = true }
+uuid = { workspace = true }
+base64 = { workspace = true }
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(target_os, values("solana"))'] }

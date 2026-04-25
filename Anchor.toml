@@ -1,0 +1,17 @@
+[toolchain]
+solana_version = "3.1.8"
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.localnet]
+tictactoe = "7e9Nbo8sbBqacV5AULLQapKYuzCtX37QUShPovB3qbwi"
+
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+check = "cargo check"
+test = "cargo test"

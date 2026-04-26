@@ -64,7 +64,7 @@ jobs:
         run: solana-keygen new --no-bip39-passphrase --silent
 
       - name: Build BPF program
-        run: anchor build
+        run: anchor build --ignore-keys
 
       - name: Run tests
         run: anchor run test
